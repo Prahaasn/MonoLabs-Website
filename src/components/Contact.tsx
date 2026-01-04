@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { services } from '@/data/services'
-import { Send, CheckCircle, AlertCircle, Mail, MapPin, Clock } from 'lucide-react'
+import { Send, CheckCircle, Mail, MapPin, Clock } from 'lucide-react'
 
 interface FormData {
   name: string
@@ -14,8 +14,6 @@ interface FormData {
   message: string
 }
 
-type FormStatus = 'idle' | 'loading' | 'success' | 'error'
-
 export function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -24,8 +22,7 @@ export function Contact() {
     service: '',
     message: '',
   })
-  const [status, setStatus] = useState<FormStatus>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -36,36 +33,31 @@ export function Contact() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setStatus('loading')
-    setErrorMessage('')
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
+    // Build mailto link with form data
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Company: ${formData.company || 'Not provided'}\n` +
+      `Service Interest: ${formData.service || 'Not specified'}\n\n` +
+      `Message:\n${formData.message}`
+    )
 
-      if (response.ok) {
-        setStatus('success')
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          service: '',
-          message: '',
-        })
-      } else {
-        const data = await response.json()
-        setErrorMessage(data.error || 'Something went wrong')
-        setStatus('error')
-      }
-    } catch {
-      setErrorMessage('Failed to send message. Please try again.')
-      setStatus('error')
-    }
+    // Open mailto link
+    window.location.href = `mailto:contact@monolabs.co.in?subject=${subject}&body=${body}`
+
+    // Show success state
+    setSubmitted(true)
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      service: '',
+      message: '',
+    })
   }
 
   return (
@@ -123,7 +115,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 mb-1">Location</div>
-                    <div className="text-white">San Francisco, CA</div>
+                    <div className="text-white">India</div>
                   </div>
                 </div>
 
@@ -144,7 +136,7 @@ export function Contact() {
           <AnimatedSection delay={0.2} className="lg:col-span-3">
             <div className="glass-card p-6 md:p-8">
               <AnimatePresence mode="wait">
-                {status === 'success' ? (
+                {submitted ? (
                   <motion.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -156,13 +148,13 @@ export function Contact() {
                       <CheckCircle className="w-8 h-8 text-mono-green-400" />
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-2">
-                      Message Sent!
+                      Email Client Opened!
                     </h3>
                     <p className="text-gray-400 mb-6">
-                      Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                      Please send the email from your mail client. We&apos;ll get back to you within 24 hours.
                     </p>
                     <button
-                      onClick={() => setStatus('idle')}
+                      onClick={() => setSubmitted(false)}
                       className="btn-secondary"
                     >
                       Send Another Message
@@ -289,51 +281,12 @@ export function Contact() {
                       />
                     </div>
 
-                    {status === 'error' && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-2 text-red-400 text-sm"
-                      >
-                        <AlertCircle className="w-4 h-4" />
-                        {errorMessage}
-                      </motion.div>
-                    )}
-
                     <button
                       type="submit"
-                      disabled={status === 'loading'}
-                      className="btn-primary w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="btn-primary w-full md:w-auto"
                     >
-                      {status === 'loading' ? (
-                        <>
-                          <svg
-                            className="animate-spin -ml-1 mr-2 h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            />
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            />
-                          </svg>
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          Send Message
-                          <Send className="ml-2 w-4 h-4" />
-                        </>
-                      )}
+                      Send Message
+                      <Send className="ml-2 w-4 h-4" />
                     </button>
                   </motion.form>
                 )}
