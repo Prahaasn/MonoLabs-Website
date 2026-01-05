@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   // Enable static export for GitHub Pages
   output: 'export',
 
-  // Set base path for GitHub Pages (repo name)
-  basePath: '/MonoLabs-Website',
-
   // Add trailing slashes for static hosting compatibility
   trailingSlash: true,
 
