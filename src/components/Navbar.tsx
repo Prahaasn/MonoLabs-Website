@@ -60,8 +60,8 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           hasScrolled
-            ? 'bg-mono-dark/80 backdrop-blur-lg border-b border-white/5'
-            : 'bg-transparent'
+            ? 'bg-white/90 backdrop-blur-lg border-b border-gray-200 shadow-sm'
+            : 'bg-white/80 backdrop-blur-sm'
         )}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +76,7 @@ export function Navbar() {
                   />
                   <path
                     d="M20 8C20 8 12 14 12 22C12 26.418 15.582 30 20 30C24.418 30 28 26.418 28 22C28 14 20 8 20 8Z"
-                    fill="#0f1a0a"
+                    fill="#ffffff"
                   />
                   <path
                     d="M20 12C20 12 15 16 15 21C15 23.761 17.239 26 20 26C22.761 26 25 23.761 25 21C25 16 20 12 20 12Z"
@@ -90,8 +90,8 @@ export function Navbar() {
                   </defs>
                 </svg>
               </div>
-              <span className="font-bold text-lg md:text-xl text-white">
-                Mono<span className="text-mono-green-400">Labs</span>
+              <span className="font-bold text-lg md:text-xl text-gray-900">
+                Kubera<span className="text-mono-green-600">Technology</span>
               </span>
             </Link>
 
@@ -101,7 +101,7 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-mono-green-400 transition-colors duration-200 text-sm font-medium"
+                  className="text-gray-700 hover:text-mono-green-600 transition-colors duration-200 text-sm font-medium"
                 >
                   {link.name}
                 </Link>
@@ -117,7 +117,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="md:hidden z-50 p-2 text-white"
+              className="md:hidden z-50 p-2 text-gray-900"
               aria-label="Toggle menu"
             >
               {isMobileOpen ? (
@@ -145,7 +145,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-mono-dark/95 backdrop-blur-lg"
+              className="absolute inset-0 bg-white/95 backdrop-blur-lg"
               onClick={() => setIsMobileOpen(false)}
             />
 
@@ -155,7 +155,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-mono-dark border-l border-white/5 flex flex-col"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white border-l border-gray-200 flex flex-col shadow-xl"
             >
               <div className="flex-1 flex flex-col justify-center px-8 py-20">
                 {navLinks.map((link, index) => (
@@ -168,7 +168,7 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       onClick={handleNavClick}
-                      className="block py-4 text-2xl font-medium text-white hover:text-mono-green-400 transition-colors"
+                      className="block py-4 text-2xl font-medium text-gray-900 hover:text-mono-green-600 transition-colors"
                     >
                       {link.name}
                     </Link>

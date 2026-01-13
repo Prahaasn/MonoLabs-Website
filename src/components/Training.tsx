@@ -14,20 +14,20 @@ const formatIcons = {
 
 export function Training() {
   return (
-    <section id="training" className="relative py-24 md:py-32">
+    <section id="training" className="relative py-24 md:py-32 bg-white">
       {/* Background accent */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-mono-green-500/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-mono-green-100/50 rounded-full blur-[150px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
             <span className="text-gradient">Training</span> Programs
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Level up your team&apos;s hardware skills with our expert-led training programs.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Bridge the gap between academia and industry with our expert-led training programs.
             From FPGA fundamentals to advanced firmware development.
           </p>
         </AnimatedSection>
@@ -39,8 +39,8 @@ export function Training() {
               <GlassCard className="h-full flex flex-col">
                 {/* Icon and Level */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-mono-green-500/10 border border-mono-green-500/20 flex items-center justify-center">
-                    <course.icon className="w-6 h-6 text-mono-green-400" />
+                  <div className="w-12 h-12 rounded-xl bg-mono-green-50 border border-mono-green-200 flex items-center justify-center">
+                    <course.icon className="w-6 h-6 text-mono-green-600" />
                   </div>
                   <span className={`px-2 py-1 rounded-full text-xs font-medium border ${levelColors[course.level]}`}>
                     {course.level.charAt(0).toUpperCase() + course.level.slice(1)}
@@ -48,12 +48,12 @@ export function Training() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {course.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-1">
                   {course.description}
                 </p>
 
@@ -68,7 +68,7 @@ export function Training() {
                   {course.topics.slice(0, 3).map((topic) => (
                     <span
                       key={topic}
-                      className="px-2 py-1 rounded-md bg-white/5 text-xs text-gray-400"
+                      className="px-2 py-1 rounded-md bg-gray-100 text-xs text-gray-600"
                     >
                       {topic}
                     </span>
@@ -103,12 +103,12 @@ export function Training() {
 
         {/* Format Options */}
         <AnimatedSection delay={0.3}>
-          <div className="glass-card p-8 md:p-12">
+          <div className="p-8 md:p-12 rounded-2xl bg-white border border-gray-200 shadow-sm">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-2">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                 Flexible Learning Options
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-600">
                 Choose the format that works best for your team
               </p>
             </div>
@@ -119,13 +119,13 @@ export function Training() {
                 return (
                   <div
                     key={option.id}
-                    className="text-center p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-mono-green-500/20 transition-colors"
+                    className="text-center p-6 rounded-xl bg-gray-50 border border-gray-200 hover:border-mono-green-300 transition-colors"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-mono-green-500/10 border border-mono-green-500/20 flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-6 h-6 text-mono-green-400" />
+                    <div className="w-12 h-12 rounded-xl bg-mono-green-50 border border-mono-green-200 flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-6 h-6 text-mono-green-600" />
                     </div>
-                    <h4 className="font-semibold text-white mb-2">{option.label}</h4>
-                    <p className="text-sm text-gray-400">{option.description}</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">{option.label}</h4>
+                    <p className="text-sm text-gray-600">{option.description}</p>
                   </div>
                 )
               })}

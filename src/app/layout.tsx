@@ -15,22 +15,22 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Mono Labs | Hardware & Firmware Innovation',
-  description: 'Expert hardware product development, firmware engineering, and FPGA design services. Transform your ideas into production-ready electronics.',
-  keywords: ['hardware design', 'firmware development', 'FPGA', 'embedded systems', 'product development', 'PCB design', 'electronics'],
-  authors: [{ name: 'Mono Labs' }],
+  title: 'Kubera Technology | Electronics Product Development',
+  description: '20+ years of expertise in end-to-end electronics product development. From concept to manufacturing-ready hardware solutions. Zero design re-spins guaranteed.',
+  keywords: ['electronics product development', 'PCB design', 'hardware design', 'FPGA', 'embedded systems', 'signal integrity', 'power integrity', 'manufacturing support'],
+  authors: [{ name: 'Kubera Technology' }],
   openGraph: {
-    title: 'Mono Labs | Hardware & Firmware Innovation',
-    description: 'Transform your ideas into production-ready electronics. Expert hardware design, firmware development, and FPGA solutions.',
+    title: 'Kubera Technology | Engineering the Future. Today.',
+    description: 'Accelerating ideas into scalable electronics. End-to-end product development with zero design re-spins.',
     url: 'https://monolabs.co.in',
-    siteName: 'Mono Labs',
+    siteName: 'Kubera Technology',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mono Labs | Hardware & Firmware Innovation',
-    description: 'Transform your ideas into production-ready electronics.',
+    title: 'Kubera Technology | Electronics Product Development',
+    description: 'Accelerating ideas into scalable electronics. 20+ years of expertise.',
   },
   robots: {
     index: true,
@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-white">
         <Navbar />
         <main>{children}</main>
         <Footer />

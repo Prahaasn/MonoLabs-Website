@@ -6,13 +6,12 @@ import Link from 'next/link'
 import { products, Product } from '@/data/products'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { StaggerContainer, StaggerItem } from '@/components/ui/StaggerContainer'
-import { GlassCard } from '@/components/ui/GlassCard'
 import { ArrowRight, Package } from 'lucide-react'
 
 const statusStyles = {
-  'available': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-  'coming-soon': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  'pre-order': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+  'available': 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  'coming-soon': 'bg-amber-50 text-amber-700 border-amber-200',
+  'pre-order': 'bg-blue-50 text-blue-700 border-blue-200',
 }
 
 const statusLabels = {
@@ -23,9 +22,9 @@ const statusLabels = {
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <GlassCard className="h-full flex flex-col overflow-hidden group">
+    <div className="h-full flex flex-col overflow-hidden group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-lg hover:border-mono-green-200 transition-all duration-300">
       {/* Product Image */}
-      <div className="relative aspect-[4/3] bg-gradient-to-br from-mono-green-900/20 to-mono-dark rounded-lg mb-4 overflow-hidden">
+      <div className="relative aspect-[4/3] bg-gradient-to-br from-mono-green-50 to-gray-50 rounded-lg mb-4 overflow-hidden">
         {/* Placeholder SVG for product */}
         <div className="absolute inset-0 flex items-center justify-center">
           <svg
@@ -41,9 +40,9 @@ function ProductCard({ product }: { product: Product }) {
             <path d="M40 80 H60 V100 H140" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
             <path d="M160 50 H140 V90 H100" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
             {/* Chips */}
-            <rect x="85" y="55" width="30" height="20" rx="2" fill="#3D6B12" stroke="#8BC34A" strokeWidth="1" />
-            <rect x="45" y="85" width="20" height="15" rx="1" fill="#3D6B12" stroke="#6AAF29" strokeWidth="1" />
-            <rect x="130" y="70" width="25" height="18" rx="2" fill="#3D6B12" stroke="#8BC34A" strokeWidth="1" />
+            <rect x="85" y="55" width="30" height="20" rx="2" fill="#4E8C17" stroke="#8BC34A" strokeWidth="1" />
+            <rect x="45" y="85" width="20" height="15" rx="1" fill="#4E8C17" stroke="#6AAF29" strokeWidth="1" />
+            <rect x="130" y="70" width="25" height="18" rx="2" fill="#4E8C17" stroke="#8BC34A" strokeWidth="1" />
             {/* Capacitors/components */}
             <circle cx="50" cy="50" r="4" fill="#8BC34A" />
             <circle cx="150" cy="50" r="4" fill="#8BC34A" />
@@ -67,13 +66,13 @@ function ProductCard({ product }: { product: Product }) {
 
       {/* Content */}
       <div className="flex-1 flex flex-col">
-        <h3 className="text-xl font-semibold text-white mb-1">
+        <h3 className="text-xl font-semibold text-gray-900 mb-1">
           {product.name}
         </h3>
-        <p className="text-mono-green-400 text-sm mb-3">
+        <p className="text-mono-green-600 text-sm mb-3">
           {product.tagline}
         </p>
-        <p className="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-1">
           {product.description}
         </p>
 
@@ -82,7 +81,7 @@ function ProductCard({ product }: { product: Product }) {
           {product.specs.slice(0, 4).map((spec) => (
             <div key={spec.label} className="text-xs">
               <span className="text-gray-500">{spec.label}:</span>
-              <span className="text-gray-300 ml-1">{spec.value}</span>
+              <span className="text-gray-700 ml-1">{spec.value}</span>
             </div>
           ))}
         </div>
@@ -105,52 +104,38 @@ function ProductCard({ product }: { product: Product }) {
           )}
         </div>
       </div>
-    </GlassCard>
+    </div>
   )
 }
 
 export function Products() {
   return (
-    <section id="products" className="relative py-24 md:py-32 bg-gradient-to-b from-transparent via-mono-green-900/5 to-transparent">
+    <section id="products" className="relative py-24 md:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
             Our <span className="text-gradient">Products</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Development kits and tools designed by engineers, for engineers.
-            Built to accelerate your prototyping and development process.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Ready-to-deploy hardware platforms and custom solutions
+            designed for your specific application requirements.
           </p>
         </AnimatedSection>
 
         {/* Products Grid */}
         {products.length > 0 ? (
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <StaggerItem key={product.id}>
                 <ProductCard product={product} />
               </StaggerItem>
             ))}
-
-            {/* Coming Soon Placeholder */}
-            <StaggerItem>
-              <div className="h-full glass-card p-6 flex flex-col items-center justify-center text-center min-h-[400px] border-dashed border-2 border-white/10">
-                <Package className="w-12 h-12 text-gray-600 mb-4" />
-                <h3 className="text-lg font-medium text-gray-400 mb-2">
-                  More Products Coming
-                </h3>
-                <p className="text-sm text-gray-500 max-w-xs">
-                  We&apos;re working on new development tools and modules.
-                  Stay tuned for updates.
-                </p>
-              </div>
-            </StaggerItem>
           </StaggerContainer>
         ) : (
           <AnimatedSection className="text-center py-16">
-            <Package className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-medium text-gray-400 mb-2">
+            <Package className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-xl font-medium text-gray-600 mb-2">
               Products Coming Soon
             </h3>
             <p className="text-gray-500">

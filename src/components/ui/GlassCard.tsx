@@ -22,7 +22,7 @@ export function GlassCard({
       <motion.div
         whileHover={{
           scale: 1.02,
-          boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.36), 0 0 30px rgba(139, 195, 74, 0.15)',
+          boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.12), 0 0 30px rgba(139, 195, 74, 0.1)',
         }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onClick={onClick}

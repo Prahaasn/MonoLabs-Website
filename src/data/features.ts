@@ -12,37 +12,37 @@ export const features: Feature[] = [
   {
     id: 'expertise',
     title: 'Deep Technical Expertise',
-    description: 'Our team brings decades of combined experience in hardware, firmware, and FPGA design across diverse industries.',
+    description: '20+ years of semiconductor experience delivering complex hardware solutions across multiple industries.',
     icon: Award,
   },
   {
-    id: 'speed',
-    title: 'Rapid Turnaround',
-    description: 'Agile development processes and parallel workflows to get your product to market faster without compromising quality.',
+    id: 'zero-respins',
+    title: 'Zero Design Re-spins',
+    description: 'Our rigorous SI/PI analysis and validation processes ensure first-time-right designs every time.',
     icon: Zap,
   },
   {
     id: 'quality',
     title: 'Production-Grade Quality',
-    description: 'Every design is optimized for manufacturing, reliability, and long-term maintainability from day one.',
+    description: 'Every design optimized for manufacturing with DFM compliance and supply chain considerations built in.',
     icon: Shield,
   },
   {
     id: 'collaboration',
     title: 'Collaborative Approach',
-    description: 'We work as an extension of your team, maintaining transparent communication and shared ownership of outcomes.',
+    description: 'We work as an extension of your team, maintaining transparent communication throughout the project.',
     icon: Users,
   },
   {
     id: 'support',
-    title: 'Lifecycle Support',
-    description: 'Long-term partnership with ongoing support throughout your product lifecycle, from prototype to EOL.',
+    title: 'End-to-End Support',
+    description: 'From concept to manufacturing, we support your product through its entire development lifecycle.',
     icon: Clock,
   },
   {
     id: 'innovation',
-    title: 'Innovative Solutions',
-    description: 'Cutting-edge approaches leveraging the latest technologies to solve your most challenging engineering problems.',
+    title: 'Industry-Ready Training',
+    description: 'Professional upskilling programs bridging the gap between academia and industry requirements.',
     icon: Lightbulb,
   },
 ]
@@ -56,34 +56,40 @@ export interface ProcessStep {
 
 export const processSteps: ProcessStep[] = [
   {
-    id: 'discovery',
+    id: 'concept',
     step: 1,
-    title: 'Discovery',
-    description: 'Understanding your requirements, constraints, and goals through detailed technical discussions.',
+    title: 'Concept',
+    description: 'Understanding your vision, requirements, and constraints through collaborative discovery.',
   },
   {
     id: 'design',
     step: 2,
     title: 'Design',
-    description: 'Creating schematic designs, PCB layouts, and firmware architecture tailored to your needs.',
+    description: 'Architecture development, schematic design, and component selection optimization.',
   },
   {
     id: 'prototype',
     step: 3,
     title: 'Prototype',
-    description: 'Rapid prototyping with iterative testing and refinement to validate the design.',
+    description: 'Rapid PCB prototyping with SI/PI analysis ensuring first-time-right designs.',
   },
   {
-    id: 'validate',
+    id: 'testing',
     step: 4,
-    title: 'Validate',
-    description: 'Comprehensive testing, certification prep, and final design optimization.',
+    title: 'Testing',
+    description: 'Comprehensive validation, bring-up, and compliance pre-testing.',
   },
   {
-    id: 'production',
+    id: 'manufacturing',
     step: 5,
-    title: 'Production',
-    description: 'Manufacturing support, quality control, and production transfer assistance.',
+    title: 'Manufacturing',
+    description: 'Production support, supply chain setup, and quality assurance.',
+  },
+  {
+    id: 'market',
+    step: 6,
+    title: 'Market',
+    description: 'Ongoing support for product lifecycle and continuous improvement.',
   },
 ]
 
@@ -94,8 +100,8 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { id: 'products', value: '50+', label: 'Products Launched' },
-  { id: 'experience', value: '10+', label: 'Years Experience' },
-  { id: 'satisfaction', value: '100%', label: 'Client Satisfaction' },
-  { id: 'engineers', value: '15+', label: 'Expert Engineers' },
+  { id: 'experience', value: '20+', label: 'Years Experience' },
+  { id: 'products', value: '100+', label: 'Products Delivered' },
+  { id: 'respins', value: '0', label: 'Design Re-spins' },
+  { id: 'domains', value: '6+', label: 'Industry Domains' },
 ]

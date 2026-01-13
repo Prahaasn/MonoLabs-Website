@@ -68,7 +68,7 @@ export const formatOptions: FormatOption[] = [
 ]
 
 export const levelColors = {
-  beginner: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-  intermediate: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  advanced: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+  beginner: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  intermediate: 'bg-amber-50 text-amber-700 border-amber-200',
+  advanced: 'bg-purple-50 text-purple-700 border-purple-200',
 }
