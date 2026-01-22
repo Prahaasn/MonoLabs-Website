@@ -1,4 +1,4 @@
-import { Cpu, Code, CircuitBoard, Shield } from 'lucide-react'
+import { Cpu, Code, CircuitBoard, Shield, Wifi } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface TrainingCourse {
@@ -52,6 +52,16 @@ export const trainingCourses: TrainingCourse[] = [
     format: ['online'],
     topics: ['Code Architecture', 'Unit Testing', 'Security', 'OTA Updates'],
     icon: Code,
+  },
+  {
+    id: 'iot-masterclass',
+    title: 'IoT Masterclass',
+    description: 'Build end-to-end IoT solutions from sensors to cloud. Learn connectivity protocols, edge computing, and secure data pipelines.',
+    duration: '48 hours',
+    level: 'intermediate',
+    format: ['online', 'hybrid'],
+    topics: ['MQTT & CoAP', 'Edge Computing', 'Cloud Integration', 'IoT Security'],
+    icon: Wifi,
   },
 ]
 
