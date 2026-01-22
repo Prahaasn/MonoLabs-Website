@@ -7,6 +7,7 @@ import { Process } from '@/components/Process'
 import { VisionMission } from '@/components/VisionMission'
 import { Industries } from '@/components/Industries'
 import { Testimonials } from '@/components/Testimonials'
+import { FAQ } from '@/components/FAQ'
 import { Contact } from '@/components/Contact'
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <Features />
       <Training />
       <Testimonials />
+      <FAQ />
       <Contact />
     </>
   )
