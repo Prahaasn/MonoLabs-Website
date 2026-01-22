@@ -15,21 +15,21 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Kubera Technology | Electronics Product Development',
+  title: 'Kubera Systems | Electronics Product Development',
   description: '20+ years of expertise in end-to-end electronics product development. From concept to manufacturing-ready hardware solutions. Zero design re-spins guaranteed.',
   keywords: ['electronics product development', 'PCB design', 'hardware design', 'FPGA', 'embedded systems', 'signal integrity', 'power integrity', 'manufacturing support'],
-  authors: [{ name: 'Kubera Technology' }],
+  authors: [{ name: 'Kubera Systems' }],
   openGraph: {
-    title: 'Kubera Technology | Engineering the Future. Today.',
+    title: 'Kubera Systems | Engineering the Future. Today.',
     description: 'Accelerating ideas into scalable electronics. End-to-end product development with zero design re-spins.',
-    url: 'https://monolabs.co.in',
-    siteName: 'Kubera Technology',
+    url: 'https://kuberasystems.com',
+    siteName: 'Kubera Systems',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kubera Technology | Electronics Product Development',
+    title: 'Kubera Systems | Electronics Product Development',
     description: 'Accelerating ideas into scalable electronics. 20+ years of expertise.',
   },
   robots: {

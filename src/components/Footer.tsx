@@ -28,7 +28,7 @@ const socialLinks = [
   { name: 'GitHub', icon: Github, href: '#' },
   { name: 'LinkedIn', icon: Linkedin, href: '#' },
   { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'Email', icon: Mail, href: 'mailto:sravan@monolabs.com' },
+  { name: 'Email', icon: Mail, href: 'mailto:info@kuberasystems.com' },
 ]
 
 export function Footer() {
@@ -62,7 +62,7 @@ export function Footer() {
                 </svg>
               </div>
               <span className="font-bold text-lg text-gray-900">
-                Kubera<span className="text-mono-green-600">Technology</span>
+                Kubera<span className="text-mono-green-600">Systems</span>
               </span>
             </Link>
             <p className="text-gray-600 text-sm mb-6 max-w-xs">
@@ -135,7 +135,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} Kubera Technology. All rights reserved.
+            &copy; {new Date().getFullYear()} Kubera Systems. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
             <Link href="#" className="hover:text-gray-700 transition-colors">

@@ -91,7 +91,7 @@ export function Navbar() {
                 </svg>
               </div>
               <span className="font-bold text-lg md:text-xl text-gray-900">
-                Kubera<span className="text-mono-green-600">Technology</span>
+                Kubera<span className="text-mono-green-600">Systems</span>
               </span>
             </Link>
 
