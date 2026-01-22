@@ -28,7 +28,7 @@ const socialLinks = [
   { name: 'GitHub', icon: Github, href: '#' },
   { name: 'LinkedIn', icon: Linkedin, href: '#' },
   { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'Email', icon: Mail, href: 'mailto:info@kuberasystems.com' },
+  { name: 'Email', icon: Mail, href: 'mailto:info@kubera.com' },
 ]
 
 export function Footer() {

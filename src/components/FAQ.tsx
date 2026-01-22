@@ -44,7 +44,7 @@ const faqs = [
   {
     id: 'get-started',
     question: 'How do I get started with Kubera Systems?',
-    answer: 'Simply reach out through our contact form or email us at info@kuberasystems.com. We\'ll schedule a consultation to understand your requirements, provide a detailed proposal, and create a project plan tailored to your needs.',
+    answer: 'Simply reach out through our contact form or email us at info@kubera.com. We\'ll schedule a consultation to understand your requirements, provide a detailed proposal, and create a project plan tailored to your needs.',
   },
 ]
 
