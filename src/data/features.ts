@@ -101,7 +101,7 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { id: 'experience', value: '20+', label: 'Years Experience' },
-  { id: 'products', value: '100+', label: 'Products Delivered' },
+  { id: 'products', value: '20+', label: 'Products Delivered' },
   { id: 'respins', value: '0', label: 'Design Re-spins' },
   { id: 'domains', value: '6+', label: 'Industry Domains' },
 ]

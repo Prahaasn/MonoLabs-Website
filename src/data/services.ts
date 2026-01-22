@@ -1,4 +1,4 @@
-import { Cpu, Wrench, Code, Zap, Layout, Activity, Box, Factory, Truck, PlayCircle, Shield, Database, FileCode } from 'lucide-react'
+import { Cpu, Wrench, Code, Zap, Layout, Activity, Box, Factory, Truck, PlayCircle, Shield, Database, FileCode, Wifi, Settings } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface Service {
@@ -140,6 +140,30 @@ export const services: Service[] = [
       'Medical device standards',
       'Automotive certifications',
       'Environmental compliance',
+    ],
+  },
+  {
+    id: 'embedded-firmware-iot',
+    title: 'Embedded Firmware & IoT Development',
+    description: 'End-to-end firmware development and IoT solutions from sensor to cloud.',
+    icon: Wifi,
+    features: [
+      'Bare-metal & RTOS development',
+      'IoT protocol implementation',
+      'Cloud connectivity integration',
+      'OTA update systems',
+    ],
+  },
+  {
+    id: 'custom-product-development',
+    title: 'Customised Product Development',
+    description: 'Complete product development from concept to production-ready solutions.',
+    icon: Settings,
+    features: [
+      'End-to-end product design',
+      'Prototype development',
+      'Production transfer support',
+      'Lifecycle management',
     ],
   },
 ]

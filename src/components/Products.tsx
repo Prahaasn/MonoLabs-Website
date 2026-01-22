@@ -25,39 +25,16 @@ function ProductCard({ product }: { product: Product }) {
     <div className="h-full flex flex-col overflow-hidden group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-lg hover:border-mono-green-200 transition-all duration-300">
       {/* Product Image */}
       <div className="relative aspect-[4/3] bg-gradient-to-br from-mono-green-50 to-gray-50 rounded-lg mb-4 overflow-hidden">
-        {/* Placeholder SVG for product */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <svg
-            viewBox="0 0 200 150"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-3/4 h-3/4 opacity-60 group-hover:opacity-80 transition-opacity"
-          >
-            {/* PCB Board outline */}
-            <rect x="20" y="20" width="160" height="110" rx="4" stroke="#8BC34A" strokeWidth="2" fill="none" />
-            {/* Circuit traces */}
-            <path d="M40 50 H80 V70 H120" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
-            <path d="M40 80 H60 V100 H140" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
-            <path d="M160 50 H140 V90 H100" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
-            {/* Chips */}
-            <rect x="85" y="55" width="30" height="20" rx="2" fill="#4E8C17" stroke="#8BC34A" strokeWidth="1" />
-            <rect x="45" y="85" width="20" height="15" rx="1" fill="#4E8C17" stroke="#6AAF29" strokeWidth="1" />
-            <rect x="130" y="70" width="25" height="18" rx="2" fill="#4E8C17" stroke="#8BC34A" strokeWidth="1" />
-            {/* Capacitors/components */}
-            <circle cx="50" cy="50" r="4" fill="#8BC34A" />
-            <circle cx="150" cy="50" r="4" fill="#8BC34A" />
-            <circle cx="50" cy="110" r="3" fill="#6AAF29" />
-            <circle cx="150" cy="110" r="3" fill="#6AAF29" />
-            {/* USB connector */}
-            <rect x="90" y="120" width="20" height="10" fill="#4E8C17" />
-            {/* LEDs */}
-            <circle cx="35" cy="35" r="2" fill="#8BC34A" className="animate-pulse" />
-            <circle cx="165" cy="35" r="2" fill="#6AAF29" />
-          </svg>
-        </div>
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+        />
 
         {/* Status Badge */}
-        <div className="absolute top-3 right-3">
+        <div className="absolute top-3 right-3 z-10">
           <span className={`px-3 py-1 rounded-full text-xs font-medium border ${statusStyles[product.status]}`}>
             {statusLabels[product.status]}
           </span>

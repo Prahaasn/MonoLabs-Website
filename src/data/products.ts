@@ -28,7 +28,7 @@ export const products: Product[] = [
     name: 'Zynq UltraScale+ MPSoC Based AI Accelerator',
     tagline: 'Edge AI at Scale',
     description: 'High-performance AI accelerator platform featuring dual/quad ARM Cortex-A53 cores combined with UltraScale+ FPGA fabric for low-latency AI inference at the edge. Handles vision, robotics, and signal processing workloads simultaneously.',
-    image: '/images/products/zynq-ai-accelerator.svg',
+    image: '/images/products/zynq-ai-accelerator.png',
     status: 'available',
     category: 'development-kit',
     specs: [
@@ -67,7 +67,7 @@ export const products: Product[] = [
     name: 'ESP32-S3 Based Smart Watch',
     tagline: 'Complete Health Monitoring',
     description: 'Feature-rich smartwatch platform with comprehensive health monitoring including heart rate, SpO2, ECG, sleep tracking, and step counting capabilities. Seamless connectivity via Bluetooth/BLE and Wi-Fi.',
-    image: '/images/products/esp32-smartwatch.svg',
+    image: '/images/products/esp32-smartwatch.jpg',
     status: 'available',
     category: 'module',
     specs: [
@@ -103,7 +103,7 @@ export const products: Product[] = [
     name: 'STM32 Based Touch Screen Module',
     tagline: 'Industrial-Grade HMI',
     description: 'High-resolution capacitive touch screen module with integrated STM32 MCU for industrial HMI applications. Features gesture recognition, multi-touch support, and industrial temperature range operation.',
-    image: '/images/products/stm32-touchscreen.svg',
+    image: '/images/products/stm32-touchscreen.webp',
     status: 'available',
     category: 'module',
     specs: [
@@ -141,7 +141,7 @@ export const products: Product[] = [
     name: 'Customized FPGA Based Hardware Platforms',
     tagline: 'Tailored FPGA Solutions',
     description: 'Custom FPGA hardware platforms designed to your specifications using industry-leading FPGA families from Xilinx, Efinix, and Lattice. Complete design services from concept to production.',
-    image: '/images/products/fpga-platforms.svg',
+    image: '/images/products/fpga-platform.jpg',
     status: 'available',
     category: 'development-kit',
     specs: [

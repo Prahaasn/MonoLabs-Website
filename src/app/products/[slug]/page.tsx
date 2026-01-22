@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { products, getProductBySlug } from '@/data/products'
 import { ArrowLeft, Check, ArrowRight } from 'lucide-react'
 
@@ -69,37 +70,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Product Image */}
             <div className="relative aspect-square bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center p-8">
-                <svg
-                  viewBox="0 0 200 150"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-full opacity-80"
-                >
-                  {/* PCB Board outline */}
-                  <rect x="20" y="20" width="160" height="110" rx="4" stroke="#8BC34A" strokeWidth="2" fill="none" />
-                  {/* Circuit traces */}
-                  <path d="M40 50 H80 V70 H120" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
-                  <path d="M40 80 H60 V100 H140" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
-                  <path d="M160 50 H140 V90 H100" stroke="#6AAF29" strokeWidth="1.5" fill="none" />
-                  {/* Chips */}
-                  <rect x="85" y="55" width="30" height="20" rx="2" fill="#4E8C17" stroke="#8BC34A" strokeWidth="1" />
-                  <rect x="45" y="85" width="20" height="15" rx="1" fill="#4E8C17" stroke="#6AAF29" strokeWidth="1" />
-                  <rect x="130" y="70" width="25" height="18" rx="2" fill="#4E8C17" stroke="#8BC34A" strokeWidth="1" />
-                  {/* Capacitors/components */}
-                  <circle cx="50" cy="50" r="4" fill="#8BC34A" />
-                  <circle cx="150" cy="50" r="4" fill="#8BC34A" />
-                  <circle cx="50" cy="110" r="3" fill="#6AAF29" />
-                  <circle cx="150" cy="110" r="3" fill="#6AAF29" />
-                  {/* USB connector */}
-                  <rect x="90" y="120" width="20" height="10" fill="#4E8C17" />
-                  {/* LEDs */}
-                  <circle cx="35" cy="35" r="2" fill="#8BC34A" />
-                  <circle cx="165" cy="35" r="2" fill="#6AAF29" />
-                </svg>
-              </div>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-contain p-8"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
               {/* Status Badge */}
-              <div className="absolute top-4 right-4">
+              <div className="absolute top-4 right-4 z-10">
                 <span className={`px-4 py-2 rounded-full text-sm font-medium border ${statusStyles[product.status]}`}>
                   {statusLabels[product.status]}
                 </span>
